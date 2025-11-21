@@ -189,7 +189,7 @@ export default function Projects({ isDark }: ProjectsProps) {
             className={`w-full flex justify-center transition-colors duration-300 ${isDark ? "bg-black text-white" : "bg-gray-50 text-gray-900"
                 }`}
         >
-            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-20 px-4 md:px-10">
+            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-20 px-4 md:px-10">
                 {/* Header */}
                 <div className="mb-12">
                     <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'

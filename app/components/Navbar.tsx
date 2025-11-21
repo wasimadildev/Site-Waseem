@@ -144,11 +144,11 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
       </nav>
 
       {/* Mobile Navigation Bar */}
-      <nav className="lg:hidden fixed left-0 right-0 z-50 p-4 m-4">
+      <nav className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
         <div className={`${isDark
-          ? 'bg-slate-800/40 border-slate-700/50'
-          : 'bg-white/40 border-gray-200/50'
-          } backdrop-blur-xl border rounded-3xl px-6 py-4 shadow-2xl transition-all duration-300`}>
+          ? 'bg-slate-800/90 border-slate-700/50'
+          : 'bg-white/90 border-gray-200/50'
+          } backdrop-blur-xl border rounded-2xl px-4 py-3 shadow-2xl transition-all duration-300`}>
           <div className="flex items-center justify-between">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -159,7 +159,7 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
                   className={`
-                    relative p-3 rounded-2xl flex flex-col items-center gap-1
+                    relative p-2 rounded-xl flex flex-col items-center gap-1
                     transition-all duration-300
                     ${isActive
                       ? isDark
@@ -172,7 +172,7 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
                   `}
                 >
                   <Icon
-                    size={22}
+                    size={20}
                     className={`transition-all duration-300 ${isActive ? 'rotate-[360deg]' : ''}`}
                   />
                   {isActive && (

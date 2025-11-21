@@ -35,8 +35,8 @@ const ExperienceItem = ({ item, isDark, isExpanded, onToggle, isLast }: {
             <button
                 onClick={onToggle}
                 className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-300 ${isDark
-                        ? 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white hover:border-gray-700'
-                        : 'bg-white border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300'
+                    ? 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white hover:border-gray-700'
+                    : 'bg-white border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300'
                     }`}
             >
                 <Briefcase size={20} />
@@ -71,8 +71,8 @@ const ExperienceItem = ({ item, isDark, isExpanded, onToggle, isLast }: {
                 }`}>
                 <div className="overflow-hidden">
                     <div className={`p-4 rounded-lg border ${isDark
-                            ? 'bg-gray-900/50 border-gray-800'
-                            : 'bg-gray-50 border-gray-200'
+                        ? 'bg-gray-900/50 border-gray-800'
+                        : 'bg-gray-50 border-gray-200'
                         }`}>
 
                         <div className={`flex items-center gap-4 text-sm mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -105,8 +105,8 @@ const ExperienceItem = ({ item, isDark, isExpanded, onToggle, isLast }: {
                                     <span
                                         key={index}
                                         className={`px-2.5 py-1 text-xs font-medium rounded-full border ${isDark
-                                                ? 'bg-gray-800 border-gray-700 text-gray-400'
-                                                : 'bg-gray-100 border-gray-200 text-gray-600'
+                                            ? 'bg-gray-800 border-gray-700 text-gray-400'
+                                            : 'bg-gray-100 border-gray-200 text-gray-600'
                                             }`}
                                     >
                                         {tag}
@@ -149,7 +149,7 @@ export default function Experience({ isDark }: ExperienceProps) {
             className={`w-full flex justify-center transition-colors duration-300 ${isDark ? "bg-black text-white" : "bg-gray-50 text-gray-900"
                 }`}
         >
-            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-20 px-4 md:px-10">
+            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-20 px-4 md:px-10">
                 {/* Header */}
                 <div className="mb-12 flex items-center gap-3">
                     <div className={`w-2 h-2 rounded-full ${isDark ? 'bg-gray-500' : 'bg-gray-400'}`} />

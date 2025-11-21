@@ -178,7 +178,7 @@ export default function Education({ isDark }: EducationProps) {
             className={`w-full flex justify-center transition-colors duration-300 ${isDark ? "bg-black text-white" : "bg-gray-50 text-gray-900"
                 }`}
         >
-            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-20 px-4 md:px-10">
+            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-20 px-4 md:px-10">
                 {/* Header */}
                 <div className="mb-12 flex items-center gap-3">
                     <div className={`w-2 h-2 rounded-full ${isDark ? 'bg-gray-500' : 'bg-gray-400'}`} />

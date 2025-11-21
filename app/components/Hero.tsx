@@ -136,7 +136,7 @@ export default function PortfolioHero({ isDark }: HeroProps) {
         {/* Avatar */}
         <div className="mb-6">
           <div className="relative inline-block">
-            <div className="w-30 h-30 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 p-1">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 p-1">
               <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
                 <img
                   src="/profile.png"
@@ -152,7 +152,7 @@ export default function PortfolioHero({ isDark }: HeroProps) {
         </div>
 
         {/* Main Heading */}
-        <h1 className={`text-xl md:text-2xl font-bold mb-4 leading-tight ${isDark ? 'text-white' : 'text-gray-900'
+        <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${isDark ? 'text-white' : 'text-gray-900'
           }`}>
           Hi, I'm Waseem — <span className="text-gray-500">A Full-Stack Developer creating thoughtful, high-quality digital products.</span>
         </h1>
@@ -203,7 +203,7 @@ export default function PortfolioHero({ isDark }: HeroProps) {
 
 
         {/* Social Icons */}
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-2">
           {socialIcons.map((item, index) => (
             <SocialIcon key={index} {...item} />
           ))}
