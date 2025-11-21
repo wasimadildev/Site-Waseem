@@ -132,7 +132,7 @@ export default function PortfolioHero({ isDark }: HeroProps) {
         }`}
     >
 
-      <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-20 px-4 md:px-10 mt-10">
+      <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 px-4 md:px-10 mt-10">
         {/* Avatar */}
         <div className="mb-6">
           <div className="relative inline-block">

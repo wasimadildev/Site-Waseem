@@ -175,7 +175,7 @@ export default function TechnologiesTools({ isDark }: TechToolsProps) {
       className={`w-full flex justify-center transition-colors duration-300 ${isDark ? "bg-black text-white" : "bg-gray-50 text-gray-900"
         }`}
     >
-      <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-20 px-4 md:px-10">
+      <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-16 px-4 md:px-10">
         {/* Main Heading */}
         <h2 className={`text-2xl md:text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'
           }`}>

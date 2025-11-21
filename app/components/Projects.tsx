@@ -150,7 +150,7 @@ export default function Projects({ isDark }: ProjectsProps) {
             title: "Real-Time Chat & Media App",
             description: "Full-stack messaging app with JWT authentication and WebSocket communication. Features real-time messaging, audio/video communication, and cross-device compatibility.",
             techStack: ["Node.js", "React", "MongoDB", "WebSockets", "Redux"],
-            images: ["/projects/chat-app.png", "/projects/chat-app.png", "/projects/chat-app.png"], // Dummy images
+            images: ["/projects/chat-app.webp"], // Dummy images
             liveUrl: "#",
             sourceUrl: "#",
             status: "In Progress"
@@ -159,7 +159,7 @@ export default function Projects({ isDark }: ProjectsProps) {
             title: "Netflix-GPT",
             description: "AI-powered movie recommendation platform with dynamic search functionality. Integrates GPT API for personalized recommendations and Firebase for authentication.",
             techStack: ["React", "Firebase", "GPT API", "Tailwind CSS"],
-            images: ["/projects/netflix-gpt.png", "/projects/netflix-gpt.png"], // Dummy images
+            images: ["/projects/netflix-gpt.png",], // Dummy images
             liveUrl: "#",
             sourceUrl: "#",
             status: "In Progress"
@@ -173,15 +173,7 @@ export default function Projects({ isDark }: ProjectsProps) {
             sourceUrl: "#",
             status: "Completed"
         },
-        {
-            title: "Q&A Platform",
-            description: "Interactive platform with real-time voting and user interactions. Built with Next.js and Appwrite for real-time updates and a modern UI/UX.",
-            techStack: ["Next.js", "Appwrite", "Tailwind CSS", "Real-time"],
-            images: ["/projects/qa-platform.png", "/projects/qa-platform.png"], // Dummy images
-            liveUrl: "#",
-            sourceUrl: "#",
-            status: "In Progress"
-        }
+
     ];
 
     return (
@@ -189,7 +181,7 @@ export default function Projects({ isDark }: ProjectsProps) {
             className={`w-full flex justify-center transition-colors duration-300 ${isDark ? "bg-black text-white" : "bg-gray-50 text-gray-900"
                 }`}
         >
-            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-20 px-4 md:px-10">
+            <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-16 px-4 md:px-10">
                 {/* Header */}
                 <div className="mb-12">
                     <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'

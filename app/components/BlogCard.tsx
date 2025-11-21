@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 interface BlogPost {
   title: string;
-  platform?: 'Medium' | 'Dev.to' | 'Personal'; // optional for internal posts
+  platform?: 'Medium' | 'Dev.to' | 'Personal' | 'Series'; // optional for internal posts
   url: string; // can be external link or internal route
   isInternal?: boolean; // true if it redirects to your website
 }
@@ -97,9 +97,9 @@ interface BlogProps {
 export default function Blog({ isDark }: BlogProps) {
   const blogPosts: BlogPost[] = [
     {
-      title: "Week 01 Notes",
-      platform: "Personal",
-      url: "/blog/week-01",
+      title: "System Design Blog Series",
+      platform: "Series",
+      url: "/blog",
       isInternal: true
     },
     {
@@ -124,7 +124,7 @@ export default function Blog({ isDark }: BlogProps) {
       className={`w-full flex justify-center transition-colors duration-300 ${isDark ? "bg-black text-white" : "bg-gray-50 text-gray-900"
         }`}
     >
-      <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-20 px-4 md:px-10">
+      <div className="w-full md:w-[80%] lg:w-[60%] max-w-3xl py-10 md:py-16 px-4 md:px-10">
         {/* Main Heading */}
         <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'
           }`}>
