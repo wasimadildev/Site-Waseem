@@ -52,7 +52,7 @@ export default function BlogListing() {
         <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'}`}>
             <ModernNavbar isDark={isDark} setIsDark={setIsDark} />
 
-            <main className="max-w-4xl mx-auto px-4 pt-32 pb-20">
+            <main className="max-w-4xl mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-20">
                 {/* Header */}
                 <div className="mb-12">
                     <Link
@@ -64,10 +64,10 @@ export default function BlogListing() {
                         Back to Home
                     </Link>
 
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                         System Design Series
                     </h1>
-                    <p className={`text-lg md:text-xl leading-relaxed max-w-2xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <p className={`text-base md:text-xl leading-relaxed max-w-2xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                         A weekly journey through the complexities of large-scale distributed systems.
                         From basic concepts to advanced architectural patterns.
                     </p>
@@ -84,7 +84,7 @@ export default function BlogListing() {
                                 }`}
                         >
                             {week.status === 'Published' ? (
-                                <Link href={week.slug} className="block p-6 md:p-8">
+                                <Link href={week.slug} className="block p-5 md:p-8">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                                         <div className="flex items-center gap-3">
                                             <span className={`px-3 py-1 text-xs font-bold rounded-full ${isDark ? 'bg-blue-500/10 text-blue-400' : 'bg-blue-100 text-blue-700'
@@ -104,12 +104,12 @@ export default function BlogListing() {
                                         </div>
                                     </div>
 
-                                    <h2 className={`text-2xl font-bold mb-3 group-hover:text-blue-500 transition-colors ${isDark ? 'text-white' : 'text-gray-900'
+                                    <h2 className={`text-xl md:text-2xl font-bold mb-3 group-hover:text-blue-500 transition-colors ${isDark ? 'text-white' : 'text-gray-900'
                                         }`}>
                                         {week.title}
                                     </h2>
 
-                                    <p className={`mb-6 leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    <p className={`text-sm md:text-base mb-6 leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                                         {week.description}
                                     </p>
 

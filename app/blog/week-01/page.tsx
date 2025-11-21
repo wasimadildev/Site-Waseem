@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import ModernNavbar from '../../components/Navbar';
 import {
     ArrowLeft, Database, Server, Globe, Clock, Shield, Zap,
     Cpu, Layers, HardDrive, Activity, CheckCircle, XCircle,
@@ -15,35 +16,8 @@ export default function Week01Notes() {
     return (
         <div className={`min-h-screen font-sans selection:bg-blue-500/30 transition-colors duration-300 ${isDark ? "bg-[#0a0a0a] text-gray-100" : "bg-gray-50 text-gray-900"}`}>
             {/* Navigation Bar */}
-            <nav className={`sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-300 ${isDark ? "bg-black/50 border-gray-800" : "bg-white/50 border-gray-200"}`}>
-                <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link
-                        href="/#blog"
-                        className={`flex items-center gap-2 text-sm font-medium transition-colors ${isDark ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-black"}`}
-                    >
-                        <ArrowLeft size={16} />
-                        Back to Blog
-                    </Link>
-
-                    <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-2 text-sm font-mono text-gray-500 hidden md:flex">
-                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                            Week 01: System Design
-                        </div>
-
-                        <button
-                            onClick={() => setIsDark(!isDark)}
-                            className={`p-2 rounded-full transition-all duration-300 ${isDark
-                                    ? "bg-gray-800 text-yellow-400 hover:bg-gray-700"
-                                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                                }`}
-                            aria-label="Toggle Theme"
-                        >
-                            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-                        </button>
-                    </div>
-                </div>
-            </nav>
+            {/* Navigation Bar */}
+            <ModernNavbar isDark={isDark} setIsDark={setIsDark} />
 
             <main className="max-w-5xl mx-auto px-6 py-12">
                 <article className="space-y-20">
