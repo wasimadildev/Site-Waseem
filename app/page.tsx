@@ -6,7 +6,7 @@ import ModernNavbar from "./components/Navbar";
 import PortfolioHero from "./components/Hero";
 import TechnologiesTools from "./components/Technologies";
 import ContactPage from "./components/Contact";
-import Blog from "./components/BlogCard";
+
 
 import Projects from "./components/Projects";
 import Education from "./components/Education";
@@ -39,9 +39,7 @@ export default function Home() {
       <section id="certifications">
         <Certifications isDark={isDark} />
       </section>
-      <section id="blog">
-        <Blog isDark={isDark} />
-      </section>
+
 
       <section id="contact">
         <ContactPage isDark={isDark} />

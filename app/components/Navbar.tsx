@@ -96,6 +96,15 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
       return;
     }
 
+    if (id === 'blog') {
+      if (pathname !== '/blog') {
+        router.push('/blog');
+      } else {
+        scrollToSection('blog');
+      }
+      return;
+    }
+
     // For other sections
     const element = document.getElementById(id);
     if (element) {
@@ -109,14 +118,20 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
   return (
     <div className={`${isDark ? 'bg-slate-950' : 'bg-gray-50'} transition-colors duration-300`}>
       {/* Desktop Navigation Bar */}
-      <nav className="hidden lg:block fixed top-8 left-1/2 -translate-x-1/2 z-50">
+      {/* Desktop Navigation Bar */}
+      <nav className="hidden lg:flex fixed top-8 left-0 right-0 justify-center z-50 px-4">
         <div className={`${isDark
           ? 'bg-slate-800/40 border-slate-700/50'
           : 'bg-white/40 border-gray-200/50'
-          } backdrop-blur-xl border rounded-full px-3 py-3 shadow-2xl transition-all duration-300`}>
-          <div className="flex items-center gap-2">
+          } backdrop-blur-xl border rounded-full w-full max-w-[1400px] px-6 py-3 shadow-2xl transition-all duration-300`}>
+          <div className="flex items-center justify-between">
+            {/* Logo / Name (Optional - adding for balance if needed, or just keeping links left/center) */}
+            <div className="flex items-center gap-2 font-bold text-xl tracking-tighter">
+              <span className={isDark ? 'text-white' : 'text-gray-900'}>WA</span>
+            </div>
+
             {/* Main Navigation */}
-            <div className="flex items-center gap-1 relative">
+            <div className="flex items-center gap-1">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeTab === item.id;
@@ -126,7 +141,7 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
                     className={`
-                      relative px-6 py-2.5 rounded-full flex items-center gap-2 
+                      relative px-4 py-2 rounded-full flex items-center gap-2 
                       transition-all duration-300 font-medium text-sm
                       ${isActive
                         ? isDark
@@ -139,7 +154,7 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
                     `}
                   >
                     <Icon
-                      size={18}
+                      size={16}
                       className={`transition-all duration-300 ${isActive ? 'rotate-[360deg]' : ''}`}
                     />
                     <span className="transition-all duration-300">{item.label}</span>
@@ -151,11 +166,9 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
               })}
             </div>
 
-            {/* Divider */}
-            <div className={`w-px h-8 ${isDark ? 'bg-slate-700' : 'bg-gray-300'}`} />
-
             {/* Right Side Actions */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-4">
+              <div className={`w-px h-8 ${isDark ? 'bg-slate-700' : 'bg-gray-300'}`} />
               <button
                 onClick={handleThemeToggle}
                 className={`
