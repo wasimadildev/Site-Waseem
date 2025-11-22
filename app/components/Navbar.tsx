@@ -187,50 +187,56 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
       </nav>
 
       {/* Mobile Navigation Bar */}
+      {/* Mobile Navigation Bar */}
       <nav className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
         <div className={`${isDark
           ? 'bg-slate-800/90 border-slate-700/50'
           : 'bg-white/90 border-gray-200/50'
-          } backdrop-blur-xl border rounded-2xl px-4 py-3 shadow-2xl transition-all duration-300`}>
-          <div className="flex items-center justify-between">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = activeTab === item.id;
+          } backdrop-blur-xl border rounded-2xl px-3 py-3 shadow-2xl transition-all duration-300`}>
+          <div className="flex items-center gap-3">
+            {/* Scrollable Nav Items */}
+            <div className="flex items-center gap-1 overflow-x-auto no-scrollbar flex-1 mask-linear-gradient">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = activeTab === item.id;
 
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`
-                    relative p-2 rounded-xl flex flex-col items-center gap-1
-                    transition-all duration-300
-                    ${isActive
-                      ? isDark
-                        ? 'bg-slate-700/80 text-white shadow-lg scale-110'
-                        : 'bg-white text-gray-900 shadow-lg scale-110'
-                      : isDark
-                        ? 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/40 hover:scale-105'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/60 hover:scale-105'
-                    }
-                  `}
-                >
-                  <Icon
-                    size={20}
-                    className={`transition-all duration-300 ${isActive ? 'rotate-[360deg]' : ''}`}
-                  />
-                  {isActive && (
-                    <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 animate-pulse" />
-                  )}
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id)}
+                    className={`
+                      relative p-2.5 rounded-xl flex flex-col items-center gap-1 min-w-[60px]
+                      transition-all duration-300 flex-shrink-0
+                      ${isActive
+                        ? isDark
+                          ? 'bg-slate-700/80 text-white shadow-lg scale-105'
+                          : 'bg-white text-gray-900 shadow-lg scale-105'
+                        : isDark
+                          ? 'text-gray-400 hover:text-gray-200 hover:bg-slate-700/40'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/60'
+                      }
+                    `}
+                  >
+                    <Icon
+                      size={20}
+                      className={`transition-all duration-300 ${isActive ? 'rotate-[360deg]' : ''}`}
+                    />
+                    {isActive && (
+                      <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 animate-pulse" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
 
-            <div className={`w-px h-10 ${isDark ? 'bg-slate-700' : 'bg-gray-300'}`} />
+            {/* Divider */}
+            <div className={`w-px h-10 flex-shrink-0 ${isDark ? 'bg-slate-700' : 'bg-gray-300'}`} />
 
+            {/* Theme Toggle (Fixed) */}
             <button
               onClick={handleThemeToggle}
               className={`
-                p-3 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-180
+                p-3 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-180 flex-shrink-0
                 ${isDark
                   ? 'text-gray-400 hover:text-white hover:bg-slate-700/60'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/60'
