@@ -116,13 +116,12 @@ interface HeroProps {
 export default function PortfolioHero({ isDark }: HeroProps) {
 
   const socialIcons = [
-    { icon: XIcon, label: 'X (Twitter)', href: 'https://twitter.com/waseemadil' },
-    { icon: LinkedInIcon, label: 'LinkedIn', href: 'https://linkedin.com/in/waseemadil' },
-    { icon: GitHubIcon, label: 'GitHub', href: 'https://github.com/waseemadil' },
-    { icon: YouTubeIcon, label: 'YouTube', href: 'https://youtube.com/@waseemadil' },
-    { icon: InstagramIcon, label: 'Instagram', href: 'https://instagram.com/waseemadil' },
-    { icon: PinterestIcon, label: 'Pinterest', href: 'https://pinterest.com/waseemadil' },
-    { icon: MediumIcon, label: 'Medium', href: 'https://medium.com/@waseemadil' },
+    { icon: XIcon, label: 'X (Twitter)', href: 'https://x.com/wasimadildev' },
+    { icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/wasimadildev/' },
+    { icon: GitHubIcon, label: 'GitHub', href: 'https://github.com/wasimadildev' },
+    { icon: YouTubeIcon, label: 'YouTube', href: 'https://www.youtube.com/@wasimadildev' },
+    { icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/wasi.madil/' },
+    { icon: MediumIcon, label: 'Medium', href: 'https://medium.com/@wasimadildev' },
     { icon: EmailIcon, label: 'Email', href: 'mailto:waseemadicode@gmail.com' },
   ];
 
