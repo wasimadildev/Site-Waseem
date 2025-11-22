@@ -2,7 +2,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Home, Briefcase, FileText, Mail, Sun, Moon, Code, GraduationCap, Award } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
+import { Home, Briefcase, FileText, Mail, Sun, Moon, Code, GraduationCap, Award, BookOpen } from 'lucide-react';
 
 interface NavbarProps {
   isDark: boolean;
@@ -11,6 +12,8 @@ interface NavbarProps {
 
 export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
   const [activeTab, setActiveTab] = useState('home');
+  const router = useRouter();
+  const pathname = usePathname();
 
   const playClickSound = () => {
     const audio = new Audio('/click.wav');
@@ -66,14 +69,41 @@ export default function ModernNavbar({ isDark, setIsDark }: NavbarProps) {
     { id: 'technologies', label: 'Technologies', icon: Briefcase },
     { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'certifications', label: 'Certifications', icon: Award },
+    { id: 'bookshelf', label: 'Bookshelf', icon: BookOpen },
     { id: 'blog', label: 'Blog', icon: FileText },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
 
   const handleNavClick = (id: string) => {
     setActiveTab(id);
-    scrollToSection(id);
     playClickSound();
+
+    if (id === 'bookshelf') {
+      if (pathname !== '/bookshelf') {
+        router.push('/bookshelf');
+      } else {
+        scrollToSection('bookshelf');
+      }
+      return;
+    }
+
+    if (id === 'home') {
+      if (pathname !== '/') {
+        router.push('/');
+      } else {
+        scrollToSection('home');
+      }
+      return;
+    }
+
+    // For other sections
+    const element = document.getElementById(id);
+    if (element) {
+      scrollToSection(id);
+    } else {
+      // If element not found on current page, navigate to home with hash
+      router.push(`/#${id}`);
+    }
   };
 
   return (
